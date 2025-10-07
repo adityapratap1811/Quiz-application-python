@@ -13,17 +13,32 @@ quiz = [
         "options": ["A. Hyper Text Markup Language", "B. High Tech Machine Learning", "C. Hyperlinks and Text Markup Level", "D. Home Tool Markup Language"],
         "answer": "A"
     },
+     {
+        "question": "Which programming language is mainly used for web development?",
+        "options": ["A. Python", "B. Java", "C. JavaScript", "D. C++"],
+        "answer": "C"
+    },
+     {
+        "question": "Which of the following is used to style web pages?",
+        "options": ["A. HTML", "B. CSS", "C. Java", "D. Python"],
+        "answer": "B"
+    },
     {
         "question": "Which data structure uses FIFO (First In First Out)?",
         "options": ["A. Stack", "B. Queue", "C. Tree", "D. Graph"],
         "answer": "B"
-    }
+    },
+      {
+        "question": "Which of the following is not a programming language?",
+        "options": ["A. Python", "B. Java", "C. HTML", "D. C#"],
+        "answer": "C"
+    },
 ]
 
 score = 0
 time_per_question = 15  # seconds allowed per question
 
-print("📝 Welcome to the Quiz Application!")
+print(" Welcome to the Quiz Application!")
 print("You have", time_per_question, "seconds for each question.\n")
 
 for i, q in enumerate(quiz, 1):
@@ -37,24 +52,24 @@ for i, q in enumerate(quiz, 1):
     # Timer loop
     while True:
         if time.time() - start_time > time_per_question:
-            print("⏰ Time's up! Moving to next question.\n")
+            print("Time's up! Moving to next question.\n")
             break
         user_answer = input("Your answer (A/B/C/D): ").strip().upper()
         if user_answer in ["A", "B", "C", "D"]:
             if user_answer == q["answer"]:
-                print("✅ Correct!\n")
+                print(" Correct!\n")
                 score += 1
             else:
-                print("❌ Wrong! Correct answer was", q["answer"], "\n")
+                print(" Wrong! Correct answer was", q["answer"], "\n")
             break
         else:
             print("Please enter a valid option (A/B/C/D).")
 
-print("🎯 Quiz Completed!")
+print(" Quiz Completed!")
 print("Your Final Score:", score, "/", len(quiz))
 if score == len(quiz):
-    print("🔥 Excellent! You nailed it!")
+    print(" Excellent! You nailed it!")
 elif score >= len(quiz)//2:
-    print("👍 Good job! Keep practicing.")
+    print(" Good job! Keep practicing.")
 else:
-    print("📖 Better luck next time, keep learning!")
+    print(" Better luck next time, keep learning!")
